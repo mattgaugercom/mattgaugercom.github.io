@@ -4,7 +4,7 @@ $(function() {
       color = d3.scale.category20();
 
   var forceGraph = d3.layout.force()
-      .charge(-240)
+      .charge(-300)
       .linkDistance(200)
       .size([width, height]);
 
@@ -84,6 +84,14 @@ $(function() {
         .style("fill", function(d) { return color(d.group); })
       .call(forceGraph.drag);
 
+  node.append("rect")
+    .attr("x", 0)
+    .attr("y", -10)
+    .attr("dx", 12)
+    .attr("dy", ".35em")
+    .attr("height", 22)
+    .style('fill', 'white')
+
   node.append("a")
     .attr("xlink:href", function(d) { return d.href; })
     .append("text")
@@ -99,7 +107,13 @@ $(function() {
       .attr("width", 16)
       .attr("height", 16);
 
-
+  svg.selectAll("rect")
+    .attr("width", function(d) {
+      var index = d.index;
+      width = node[0][index].childNodes[1].getBBox().width + 8;
+      console.log(width);
+      return width;
+    });
 
   forceGraph.on("tick", function() {
     link.attr("x1", function(d) { return d.source.x; })
