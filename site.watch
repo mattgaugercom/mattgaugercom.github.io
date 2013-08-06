@@ -1,0 +1,3 @@
+watch('site/pages/index.haml') { puts 'Compiling page'; system('haml site/pages/index.haml gh-pages/index.html') }
+watch('site/assets/stylesheets/.*') { puts 'Compiling scss'; system('compass compile') }
+watch('site/assets/javascripts/(.*)') { |md| puts "JS file changed: #{md[1]}"; system("cp site/assets/javascripts/#{md[1]} gh-pages/javascripts/#{md[1]}") }
