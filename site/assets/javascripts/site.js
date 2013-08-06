@@ -46,7 +46,12 @@ $(function() {
       name: "hackz0r links tumblog",
       href: "http://hackz0r.tumblr.com/",
       favicon: "https://tumblr.com/favicon.ico"
-      }
+    },
+    {
+      name: "coderwall",
+      href: "https://coderwall.com/mathias",
+      favicon: "https://coderwall.com/favicon.ico"
+    }
   ];
 
   var links = _.map(nodes, function(node, index) {
