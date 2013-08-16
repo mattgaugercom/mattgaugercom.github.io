@@ -111,8 +111,7 @@ $(function() {
     .attr("width", function(d) {
       var index = d.index;
       width = node[0][index].childNodes[1].getBBox().width + 8;
-      console.log(width);
-      return width;
+      return Math.ceil(width);
     });
 
   forceGraph.on("tick", function() {
