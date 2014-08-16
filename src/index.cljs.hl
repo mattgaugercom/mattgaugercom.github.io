@@ -10,19 +10,15 @@
 (defc prompt "cljs.user=> ")
 (defc console nil)
 
-(declare write-console)
-
-(defn prompt-console
+(defn prompt-for-input
   []
-  (.Prompt @console true write-console))
-
-(defn write-console
-  [input]
-  (do
-    ;; echo back input
-    (.Write @console (str input "\n") "jqconsole-output")
-    ;; prompt for more input
-    (prompt-console)))
+  (.Prompt @console
+           true
+           (fn [input]
+             ;; echo back input
+             (.Write @console (str input "\n") "jqconsole-output")
+             ;; prompt for more input
+             (prompt-for-input))))
 
 (defelem jq-console
   "Creates an instance of a jqConsole in a div"
@@ -34,7 +30,7 @@
                                     @start-text
                                     @prompt))
         (.SetIndentWidth @console 2)
-        (prompt-console)))))
+        (prompt-for-input)))))
 
 (html
   (head
