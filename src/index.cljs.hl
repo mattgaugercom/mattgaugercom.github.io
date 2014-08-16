@@ -1,0 +1,9 @@
+(page "index.html")
+
+(defc clicks 0)
+
+(html
+  (head)
+  (body
+    (text "Clicks so far: ~{clicks} ")
+    (button :on-click #(swap! clicks inc) "click me!")))

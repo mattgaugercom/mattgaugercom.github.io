@@ -17,3 +17,5 @@ site/_site/
 Session.vim
 .netrwhist
 *~
+
+.boot
