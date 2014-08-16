@@ -19,3 +19,4 @@ Session.vim
 *~
 
 .boot
+node_modules/

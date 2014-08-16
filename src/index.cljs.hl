@@ -1,9 +1,44 @@
 (page "index.html")
 
-(defc clicks 0)
+(defc start-text (clojure.string.join "\n"
+                                      [";; Clojurescript"
+                                       ";;"
+                                       "- A port of the ClojureScript compiler to ClojureScript"
+                                       "- Served inside a jqConsole."
+                                       ""]))
+
+(defc prompt "cljs.user=> ")
+(defc console nil)
+
+(declare write-console)
+
+(defn prompt-console
+  []
+  (.Prompt @console true write-console))
+
+(defn write-console
+  [input]
+  (do
+    ;; echo back input
+    (.Write @console (str input "\n") "jqconsole-output")
+    ;; prompt for more input
+    (prompt-console)))
+
+(defelem jq-console
+  "Creates an instance of a jqConsole in a div"
+  [attr kids]
+  (with-let [elem (div :id "console")]
+    (with-init!
+      (do
+        (reset! console (.jqconsole (js/jQuery elem)
+                                    @start-text
+                                    @prompt))
+        (.SetIndentWidth @console 2)
+        (prompt-console)))))
 
 (html
-  (head)
+  (head
+   (link :href "css/main.css" :rel "stylesheet"))
   (body
-    (text "Clicks so far: ~{clicks} ")
-    (button :on-click #(swap! clicks inc) "click me!")))
+   (h1 (text "mattgauger.com"))
+   (jq-console)))
