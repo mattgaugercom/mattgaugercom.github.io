@@ -6,7 +6,7 @@ _site/
 # Generated files:
 gh-pages/
 site/_site/
-.sass-cache
+.sass-cache/
 
 # OSX
 .DS_Store
