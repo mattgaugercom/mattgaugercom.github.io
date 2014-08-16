@@ -19,12 +19,12 @@
   "List of tasks running in other threads that will need to be cleaned up before
   boot can exit."
   (atom ()))
- 
+
 ;; cleanup background tasks on shutdown
 (->
   (Runtime/getRuntime)
   (.addShutdownHook (Thread. #(doseq [job @bgs] (future-cancel job)))))
- 
+
 (defn shell [& args]
   ((apply #'tailrecursion.boot.core.task/sh args)))
 
@@ -35,7 +35,7 @@
         run? (partial compare-and-set! ran? @ran?)]
     (fn [continue]
       (let [task (task continue)]
-        #(continue ((if (run? true) task identity) %)))))) 
+        #(continue ((if (run? true) task identity) %))))))
 
 (deftask bg
   "Run the given `task` once, in a separate thread."
