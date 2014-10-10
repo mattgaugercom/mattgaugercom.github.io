@@ -5,7 +5,8 @@
 (set-env!
  :project 'mattgaugerdotcom
  :dependencies '[[tailrecursion/boot.task   "2.2.4"]
-                 [tailrecursion/hoplon      "5.10.17"]]
+                 [tailrecursion/hoplon      "5.10.17"]
+                 [hum                       "0.3.0"]]
  :out-path     "out"
  :src-paths    #{"src/"})
 

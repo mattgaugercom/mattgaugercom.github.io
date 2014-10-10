@@ -1,4 +1,5 @@
-(page "index.html")
+(page "index.html"
+  (:require [hum.core :as hum]))
 
 (defelem goog-analytics [account-id]
   (script :type "text/javascript"
@@ -7,9 +8,57 @@
                  account-id
                  "']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();"))))
 
+(def ctx (hum/create-context))
+(def vco (hum/create-osc ctx :square))
+(def vcf (hum/create-biquad-filter ctx))
+(def output-obj (hum/create-gain ctx))
+
+(hum/connect vco vcf)
+(hum/connect vcf output-obj)
+
+(hum/start-osc vco)
+
+(hum/connect-output output-obj)
+
+(defn note-num-to-frequency [note-num]
+  (let [expt-numerator (- note-num 49)
+        expt-denominator 12
+        expt (/ expt-numerator expt-denominator)
+        multiplier (.pow js/Math 2 expt)
+        a 440]
+  (* multiplier a)))
+
+(defn play-note [note-num]
+  (let [freq (note-num-to-frequency note-num)]
+    (hum/note-on output vco freq)))
+
+(defn note-off []
+  (hum/note-off output))
+
+(defc note-length 200)
+(defc current-step 0)
+(defc steps-limit 8)
+(defc step-notes (repeat 8 (atom false)))
+(def steps (cell= (map-indexed (fn [idx item] {:step idx :on item :current (= idx current-step)}) step-notes)))
+
+(defn wraparound-inc [current]
+  (mod (inc current) @steps-limit))
+
+(defn loop-over-steps []
+  (swap! current-step wraparound-inc)
+;;  (.log js/console (str "Current step is: " @current-step))
+  (js/setTimeout loop-over-steps @note-length))
+
+(loop-over-steps)
+
 (html
   (head
    (link :href "css/main.css" :rel "stylesheet"))
   (body
    (h1 (text "mattgauger.com"))
+   (div :class "container"
+    (div :class "row"
+     (loop-tpl :bindings [step steps]
+      (div :class "step"
+           :do-class {:current (:current step)}))))
    (goog-analytics "UA-25564656-1")))
