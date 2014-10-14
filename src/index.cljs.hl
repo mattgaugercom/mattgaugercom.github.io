@@ -81,7 +81,7 @@
 (html
   (head
    (meta :name "viewport" :content "width=device-width, initial-scale=1")
-
+   (title "mattgauger.com - Matt Gauger's scratch pad")
    (link :href "css/normalize.css" :rel "stylesheet")
    (link :href "css/main.css" :rel "stylesheet"))
   (body
@@ -103,8 +103,7 @@
                      :value @note-length
                      :on-change (fn []
                                   (reset! note-length (js/parseInt (val-id "note-length-slider")))
-                                  (reset! attack-length (min @note-length @attack-length))
-                                  (reset! decay-length (min @note-length @decay-length))))
+                                  (reset! attack-length (min @note-length @attack-length))))
               (text "~{note-length} millis")
               (br)
               (label "Attack")
@@ -143,5 +142,9 @@
     (div :class "row clearfix"
          (div :class "column"
               (button :on-click toggle-playing (text "~{play-button-text}"))
-              (p (text "If you experience \"popping\", then adjust your decay time to be longer.")))))
+              (p (text "Click the boxes above to toggle the note playing."))
+              (p (text "If you experience \"popping\", then adjust your decay time to be longer."))))
+    (footer (text "Made with love in ")
+            (a :href "http://hoplon.io" "Hoplon")
+            (text ".")))
    (goog-analytics "UA-25564656-1")))
