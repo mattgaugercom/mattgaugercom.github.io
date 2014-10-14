@@ -1,12 +1,21 @@
 (page "index.html"
   (:require [hum.core :as hum]))
 
+(defn log [s] (.log js/console s))
+
 (defelem goog-analytics [account-id]
   (script :type "text/javascript"
            (text
             (str "var _gaq = _gaq || []; _gaq.push(['_setAccount', '"
                  account-id
                  "']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();"))))
+
+(defc note-length 200)
+(defc attack-length @note-length)
+(defc decay-length 400)
+
+(defn to-seconds [millis]
+  (/ millis 1000))
 
 (def ctx (hum/create-context))
 (def vco (hum/create-osc ctx :square))
@@ -20,45 +29,119 @@
 
 (hum/connect-output output-obj)
 
-(defn note-num-to-frequency [note-num]
-  (let [expt-numerator (- note-num 49)
-        expt-denominator 12
-        expt (/ expt-numerator expt-denominator)
-        multiplier (.pow js/Math 2 expt)
-        a 440]
-  (* multiplier a)))
-
-(defn play-note [note-num]
-  (let [freq (note-num-to-frequency note-num)]
-    (hum/note-on output vco freq)))
-
 (defn note-off []
-  (hum/note-off output))
+  (.linearRampToValueAtTime (.-gain output-obj)
+                            0.0
+                            (+ (hum/curr-time (hum/ctx-for output-obj))
+                               (to-seconds @decay-length))))
 
-(defc note-length 200)
+
 (defc current-step 0)
-(defc steps-limit 8)
-(defc step-notes (repeat 8 (atom false)))
-(def steps (cell= (map-indexed (fn [idx item] {:step idx :on item :current (= idx current-step)}) step-notes)))
+(def steps-limit 8)
+
+(defc steps (map-indexed (fn [idx itm] {:id idx :on? false}) (range steps-limit)))
+
+(defn toggle-step [step-id old-steps]
+  (doall
+   (mapv
+    (fn [c]
+      (if (= step-id (:id c))
+        (update-in c [:on?] not)
+        c))
+    old-steps)))
+
+(defn toggle-on [step-id]
+  (swap! steps (fn [c] (toggle-step step-id c))))
+
+(defc playing? false)
+(defc= play-button-text (if playing? "Pause" "Play"))
+
+(defn toggle-playing []
+  (swap! playing? not)
+  (note-off))
 
 (defn wraparound-inc [current]
-  (mod (inc current) @steps-limit))
+  (mod (inc current) steps-limit))
+
+(defc= current-step-note
+  (first (filter #(= current-step (:id %)) steps)))
+
+(defc current-pitch 440)
 
 (defn loop-over-steps []
-  (swap! current-step wraparound-inc)
-;;  (.log js/console (str "Current step is: " @current-step))
+  (when @playing?
+    (note-off)
+    (swap! current-step wraparound-inc)
+    (when (:on? @current-step-note)
+      (hum/note-on output-obj vco @current-pitch {:ramp-time (to-seconds @attack-length)})))
   (js/setTimeout loop-over-steps @note-length))
 
 (loop-over-steps)
 
 (html
   (head
+   (meta :name "viewport" :content "width=device-width, initial-scale=1")
+
+   (link :href "css/normalize.css" :rel "stylesheet")
    (link :href "css/main.css" :rel "stylesheet"))
   (body
-   (h1 (text "mattgauger.com"))
    (div :class "container"
-    (div :class "row"
-     (loop-tpl :bindings [step steps]
-      (div :class "step"
-           :do-class {:current (:current step)}))))
+    (h1 (text "mattgauger.com"))
+    (div :class "row clearfix"
+         (div :class "column half"
+              (text "Beats by ")
+              (a :href "https://mathias.github.io/hum" (text "hum")))))
+       (div :class "container"
+    (div :class "row clearfix"
+         (div :class "column half"
+              (h2 "Note settings")
+              (label "Note length")
+              (br)
+              (input :type "range"
+                     :id "note-length-slider"
+                     :min 0 :max 1000
+                     :value @note-length
+                     :on-change (fn []
+                                  (reset! note-length (js/parseInt (val-id "note-length-slider")))
+                                  (reset! attack-length (min @note-length @attack-length))
+                                  (reset! decay-length (min @note-length @decay-length))))
+              (text "~{note-length} millis")
+              (br)
+              (label "Attack")
+              (br)
+              (input :type "range"
+                     :id "attack-slider"
+                     :min 0 :max (cell= note-length)
+                     :value (cell= attack-length)
+                     :on-change #(reset! attack-length (js/parseInt (val-id "attack-slider"))))
+              (text "~{attack-length} millis")
+              (br)
+              (label "Decay")
+              (br)
+              (input :type "range"
+                     :id "decay-slider"
+                     :min 30 :max (cell= note-length)
+                     :value (cell= decay-length)
+                     :on-change #(reset! decay-length (js/parseInt (val-id "decay-slider"))))
+              (text "~{decay-length} millis")
+              (br)
+
+              (label "Pitch")
+              (br)
+              (input :type "range"
+                     :id "pitch-slider"
+                     :min 100 :max 440
+                     :value @current-pitch
+                     :on-change #(reset! current-pitch (js/parseInt (val-id "pitch-slider"))))
+              (text "~{current-pitch}Hz"))
+         (div :class "column half"
+              (loop-tpl :bindings [step steps]
+                        (div :class "step"
+                             :do-class (cell= {:on (:on? step)
+                                               :current (= current-step (:id step))})
+                             :on-click #(toggle-on (:id @step))))))
+    (div :class "row clearfix"
+         (div :class "column"
+              (button :on-click toggle-playing (text "~{play-button-text}"))
+              (p (text "If you experience \"popping\", then adjust your decay time to be longer.")))))
    (goog-analytics "UA-25564656-1")))

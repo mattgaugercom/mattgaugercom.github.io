@@ -1,4 +1,25 @@
 .current {
-  background: red; }
+  border: 1px solid red; }
+
+.step {
+  background: gray;
+  float: left;
+  width: 1em;
+  height: 1em; }
+
+.on {
+  background: blue; }
+
+.current {
+  border: 1px solid red; }
+
+.step {
+  background: gray;
+  float: left;
+  width: 1em;
+  height: 1em; }
+
+.on {
+  background: blue; }
 
 /*# sourceMappingURL=main.css.map */

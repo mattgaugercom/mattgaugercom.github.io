@@ -4,7 +4,7 @@ module.exports = function(grunt) {
       dev: {
         files: {
           // 'destination': 'source'
-          'assets/css/main.css': 'sass/*.scss'
+          'assets/css/main.css': 'sass/**/main.scss'
         },
         options: {
           sourceMap: true
