@@ -145,6 +145,8 @@
               (p (text "If you experience \"popping\", then adjust your decay time to be longer."))))
     (footer (p (text "Made with love in ")
                (a :href "http://hoplon.io" "Hoplon")
+               (text " by ")
+               (a :href "http://blog.mattgauger.com" "Matt Gauger")
                (text "."))
             (p (text "If you found this interesting, check out ")
                (a :href "http://blog.mattgauger.com" "my blog")
