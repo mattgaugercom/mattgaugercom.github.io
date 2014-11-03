@@ -28416,15 +28416,15 @@ tailrecursion.hoplon.app_pages._index_DOT_html.hoploninit = function hoploninit(
   };
   tailrecursion.hoplon.app_pages._index_DOT_html.goog_analytics = function() {
     var goog_analytics__delegate = function(args__8615__auto__) {
-      var vec__13756 = tailrecursion.hoplon.parse_args.call(null, args__8615__auto__);
-      var account_id = cljs.core.nth.call(null, vec__13756, 0, null);
+      var vec__16827 = tailrecursion.hoplon.parse_args.call(null, args__8615__auto__);
+      var account_id = cljs.core.nth.call(null, vec__16827, 0, null);
       return tailrecursion.hoplon.script.call(null, new cljs.core.Keyword(null, "type", "type", 1017479852), "text/javascript", function() {
         var t__8640__auto__ = document.createTextNode("");
-        tailrecursion.javelin.lift.call(null, function(t__8640__auto__, vec__13756, account_id) {
-          return function(G__13758, G__13757) {
-            return G__13757.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1("var _gaq \x3d _gaq || []; _gaq.push(['_setAccount', '" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__13758) + "']); _gaq.push(['_trackPageview']); (function() { var ga \x3d document.createElement('script'); ga.type \x3d 'text/javascript'; ga.async \x3d true; ga.src \x3d ('https:' \x3d\x3d document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s \x3d document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();");
+        tailrecursion.javelin.lift.call(null, function(t__8640__auto__, vec__16827, account_id) {
+          return function(G__16829, G__16828) {
+            return G__16828.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1("var _gaq \x3d _gaq || []; _gaq.push(['_setAccount', '" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__16829) + "']); _gaq.push(['_trackPageview']); (function() { var ga \x3d document.createElement('script'); ga.type \x3d 'text/javascript'; ga.async \x3d true; ga.src \x3d ('https:' \x3d\x3d document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s \x3d document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();");
           };
-        }(t__8640__auto__, vec__13756, account_id)).call(null, account_id, t__8640__auto__);
+        }(t__8640__auto__, vec__16827, account_id)).call(null, account_id, t__8640__auto__);
         return t__8640__auto__;
       }());
     };
@@ -28436,8 +28436,8 @@ tailrecursion.hoplon.app_pages._index_DOT_html.hoploninit = function hoploninit(
       return goog_analytics__delegate.call(this, args__8615__auto__);
     };
     goog_analytics.cljs$lang$maxFixedArity = 0;
-    goog_analytics.cljs$lang$applyTo = function(arglist__13821) {
-      var args__8615__auto__ = cljs.core.seq(arglist__13821);
+    goog_analytics.cljs$lang$applyTo = function(arglist__16893) {
+      var args__8615__auto__ = cljs.core.seq(arglist__16893);
       return goog_analytics__delegate(args__8615__auto__);
     };
     goog_analytics.cljs$core$IFn$_invoke$arity$variadic = goog_analytics__delegate;
@@ -28480,8 +28480,8 @@ tailrecursion.hoplon.app_pages._index_DOT_html.hoploninit = function hoploninit(
     });
   };
   tailrecursion.hoplon.app_pages._index_DOT_html.playing_QMARK_ = tailrecursion.javelin.cell.call(null, false);
-  tailrecursion.hoplon.app_pages._index_DOT_html.play_button_text = tailrecursion.javelin.lift.call(null, function(G__13759) {
-    if (cljs.core.truth_(G__13759)) {
+  tailrecursion.hoplon.app_pages._index_DOT_html.play_button_text = tailrecursion.javelin.lift.call(null, function(G__16830) {
+    if (cljs.core.truth_(G__16830)) {
       return "Pause";
     } else {
       return "Play";
@@ -28494,10 +28494,10 @@ tailrecursion.hoplon.app_pages._index_DOT_html.hoploninit = function hoploninit(
   tailrecursion.hoplon.app_pages._index_DOT_html.wraparound_inc = function wraparound_inc(current) {
     return cljs.core.mod.call(null, current + 1, tailrecursion.hoplon.app_pages._index_DOT_html.steps_limit);
   };
-  tailrecursion.hoplon.app_pages._index_DOT_html.current_step_note = tailrecursion.javelin.lift.call(null, function(G__13760, G__13762, G__13763, G__13764, G__13761) {
-    return G__13760.call(null, G__13761.call(null, function(p1__13684_SHARP_) {
-      return G__13762.call(null, G__13763, (new cljs.core.Keyword(null, "id", "id", 1013907597)).cljs$core$IFn$_invoke$arity$1(p1__13684_SHARP_));
-    }, G__13764));
+  tailrecursion.hoplon.app_pages._index_DOT_html.current_step_note = tailrecursion.javelin.lift.call(null, function(G__16831, G__16833, G__16834, G__16835, G__16832) {
+    return G__16831.call(null, G__16832.call(null, function(p1__16754_SHARP_) {
+      return G__16833.call(null, G__16834, (new cljs.core.Keyword(null, "id", "id", 1013907597)).cljs$core$IFn$_invoke$arity$1(p1__16754_SHARP_));
+    }, G__16835));
   }).call(null, cljs.core.first, cljs.core._EQ_, tailrecursion.hoplon.app_pages._index_DOT_html.current_step, tailrecursion.hoplon.app_pages._index_DOT_html.steps, cljs.core.filter);
   tailrecursion.hoplon.app_pages._index_DOT_html.current_pitch = tailrecursion.javelin.cell.call(null, 440);
   tailrecursion.hoplon.app_pages._index_DOT_html.loop_over_steps = function loop_over_steps() {
@@ -28519,18 +28519,18 @@ tailrecursion.hoplon.app_pages._index_DOT_html.hoploninit = function hoploninit(
     return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [tailrecursion.hoplon.link.call(null, new cljs.core.Keyword(null, "rel", "rel", 1014017035), "stylesheet", new cljs.core.Keyword(null, "type", "type", 1017479852), "text/css", new cljs.core.Keyword(null, "href", "href", 1017115293), window["_hoplon_main_css"]), meta.call(null, new cljs.core.Keyword(null, "name", "name", 1017277949), "viewport", new cljs.core.Keyword(null, "content", "content", 1965434859), 
     "width\x3ddevice-width, initial-scale\x3d1"), tailrecursion.hoplon.title.call(null, "mattgauger.com - Matt Gauger's scratch pad"), tailrecursion.hoplon.link.call(null, new cljs.core.Keyword(null, "href", "href", 1017115293), "css/main.css", new cljs.core.Keyword(null, "rel", "rel", 1014017035), "stylesheet")], null);
   }()), tailrecursion.hoplon.html_body.call(null, cljs.core.PersistentArrayMap.EMPTY, function() {
-    var G__13766 = tailrecursion.hoplon.h1.call(null, document.createTextNode("mattgauger.com"));
-    var G__13769 = tailrecursion.hoplon.a.call(null, new cljs.core.Keyword(null, "href", "href", 1017115293), "https://mathias.github.io/hum", document.createTextNode("hum"));
-    var G__13768 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "column half", document.createTextNode("Beats by "), G__13769);
-    var G__13767 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "row clearfix", G__13768);
-    var G__13765 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "container", G__13766, G__13767);
-    return G__13765;
+    var G__16837 = tailrecursion.hoplon.h1.call(null, document.createTextNode("mattgauger.com"));
+    var G__16840 = tailrecursion.hoplon.a.call(null, new cljs.core.Keyword(null, "href", "href", 1017115293), "https://mathias.github.io/hum", document.createTextNode("hum"));
+    var G__16839 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "column half", document.createTextNode("Beats by "), G__16840);
+    var G__16838 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "row clearfix", G__16839);
+    var G__16836 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "container", G__16837, G__16838);
+    return G__16836;
   }(), function() {
-    var G__13773 = tailrecursion.hoplon.h2.call(null, "Note settings");
-    var G__13774 = tailrecursion.hoplon.label.call(null, "Note length");
-    var G__13780 = tailrecursion.hoplon.br.call(null);
-    var G__13782 = cljs.core.deref.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.note_length);
-    var G__13781 = tailrecursion.hoplon.input.call(null, new cljs.core.Keyword(null, "type", "type", 1017479852), "range", new cljs.core.Keyword(null, "id", "id", 1013907597), "note-length-slider", new cljs.core.Keyword(null, "min", "min", 1014012356), 0, new cljs.core.Keyword(null, "max", "max", 1014012118), 1E3, new cljs.core.Keyword(null, "value", "value", 1125876963), G__13782, new cljs.core.Keyword(null, "on-change", "on-change", 606853840), function(G__13773, G__13774, G__13780, G__13782) {
+    var G__16844 = tailrecursion.hoplon.h2.call(null, "Note settings");
+    var G__16845 = tailrecursion.hoplon.label.call(null, "Note length");
+    var G__16851 = tailrecursion.hoplon.br.call(null);
+    var G__16853 = cljs.core.deref.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.note_length);
+    var G__16852 = tailrecursion.hoplon.input.call(null, new cljs.core.Keyword(null, "type", "type", 1017479852), "range", new cljs.core.Keyword(null, "id", "id", 1013907597), "note-length-slider", new cljs.core.Keyword(null, "min", "min", 1014012356), 0, new cljs.core.Keyword(null, "max", "max", 1014012118), 1E3, new cljs.core.Keyword(null, "value", "value", 1125876963), G__16853, new cljs.core.Keyword(null, "on-change", "on-change", 606853840), function(G__16844, G__16845, G__16851, G__16853) {
       return function() {
         cljs.core.reset_BANG_.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.note_length, parseInt(tailrecursion.hoplon.val_id.call(null, "note-length-slider")));
         return cljs.core.reset_BANG_.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.attack_length, function() {
@@ -28539,124 +28539,125 @@ tailrecursion.hoplon.app_pages._index_DOT_html.hoploninit = function hoploninit(
           return x__7670__auto__ < y__7671__auto__ ? x__7670__auto__ : y__7671__auto__;
         }());
       };
-    }(G__13773, G__13774, G__13780, G__13782));
-    var G__13783 = tailrecursion.hoplon.br.call(null);
-    var G__13784 = tailrecursion.hoplon.label.call(null, "Attack");
-    var G__13785 = tailrecursion.hoplon.br.call(null);
-    var G__13786 = tailrecursion.hoplon.input.call(null, new cljs.core.Keyword(null, "type", "type", 1017479852), "range", new cljs.core.Keyword(null, "id", "id", 1013907597), "attack-slider", new cljs.core.Keyword(null, "min", "min", 1014012356), 0, new cljs.core.Keyword(null, "max", "max", 1014012118), tailrecursion.javelin.lift.call(null, function(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785) {
-      return function(G__13802) {
-        return G__13802;
+    }(G__16844, G__16845, G__16851, G__16853));
+    var G__16854 = tailrecursion.hoplon.br.call(null);
+    var G__16855 = tailrecursion.hoplon.label.call(null, "Attack");
+    var G__16856 = tailrecursion.hoplon.br.call(null);
+    var G__16857 = tailrecursion.hoplon.input.call(null, new cljs.core.Keyword(null, "type", "type", 1017479852), "range", new cljs.core.Keyword(null, "id", "id", 1013907597), "attack-slider", new cljs.core.Keyword(null, "min", "min", 1014012356), 0, new cljs.core.Keyword(null, "max", "max", 1014012118), tailrecursion.javelin.lift.call(null, function(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856) {
+      return function(G__16874) {
+        return G__16874;
       };
-    }(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.note_length), new cljs.core.Keyword(null, "value", "value", 1125876963), tailrecursion.javelin.lift.call(null, function(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785) {
-      return function(G__13803) {
-        return G__13803;
+    }(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.note_length), new cljs.core.Keyword(null, "value", "value", 1125876963), tailrecursion.javelin.lift.call(null, function(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856) {
+      return function(G__16875) {
+        return G__16875;
       };
-    }(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.attack_length), new cljs.core.Keyword(null, "on-change", "on-change", 606853840), function(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785) {
+    }(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.attack_length), new cljs.core.Keyword(null, "on-change", "on-change", 606853840), function(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856) {
       return function() {
         return cljs.core.reset_BANG_.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.attack_length, parseInt(tailrecursion.hoplon.val_id.call(null, "attack-slider")));
       };
-    }(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785));
-    var G__13787 = tailrecursion.hoplon.br.call(null);
-    var G__13788 = tailrecursion.hoplon.label.call(null, "Decay");
-    var G__13789 = tailrecursion.hoplon.br.call(null);
-    var G__13790 = tailrecursion.hoplon.input.call(null, new cljs.core.Keyword(null, "type", "type", 1017479852), "range", new cljs.core.Keyword(null, "id", "id", 1013907597), "decay-slider", new cljs.core.Keyword(null, "min", "min", 1014012356), 30, new cljs.core.Keyword(null, "max", "max", 1014012118), 1E3, new cljs.core.Keyword(null, "value", "value", 1125876963), tailrecursion.javelin.lift.call(null, function(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, 
-    G__13787, G__13788, G__13789) {
-      return function(G__13804) {
-        return G__13804;
+    }(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856));
+    var G__16858 = tailrecursion.hoplon.br.call(null);
+    var G__16859 = tailrecursion.hoplon.label.call(null, "Decay");
+    var G__16860 = tailrecursion.hoplon.br.call(null);
+    var G__16861 = tailrecursion.hoplon.input.call(null, new cljs.core.Keyword(null, "type", "type", 1017479852), "range", new cljs.core.Keyword(null, "id", "id", 1013907597), "decay-slider", new cljs.core.Keyword(null, "min", "min", 1014012356), 30, new cljs.core.Keyword(null, "max", "max", 1014012118), 1E3, new cljs.core.Keyword(null, "value", "value", 1125876963), tailrecursion.javelin.lift.call(null, function(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, 
+    G__16858, G__16859, G__16860) {
+      return function(G__16876) {
+        return G__16876;
       };
-    }(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.decay_length), new cljs.core.Keyword(null, "on-change", "on-change", 606853840), function(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789) {
+    }(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.decay_length), new cljs.core.Keyword(null, "on-change", "on-change", 606853840), function(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860) {
       return function() {
         return cljs.core.reset_BANG_.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.decay_length, parseInt(tailrecursion.hoplon.val_id.call(null, "decay-slider")));
       };
-    }(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789));
-    var G__13791 = tailrecursion.hoplon.br.call(null);
-    var G__13792 = tailrecursion.hoplon.label.call(null, "Pitch");
-    var G__13793 = tailrecursion.hoplon.br.call(null);
-    var G__13795 = cljs.core.deref.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.current_pitch);
-    var G__13794 = tailrecursion.hoplon.input.call(null, new cljs.core.Keyword(null, "type", "type", 1017479852), "range", new cljs.core.Keyword(null, "id", "id", 1013907597), "pitch-slider", new cljs.core.Keyword(null, "min", "min", 1014012356), 100, new cljs.core.Keyword(null, "max", "max", 1014012118), 440, new cljs.core.Keyword(null, "value", "value", 1125876963), G__13795, new cljs.core.Keyword(null, "on-change", "on-change", 606853840), function(G__13773, G__13774, G__13780, G__13782, G__13781, 
-    G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795) {
+    }(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860));
+    var G__16862 = tailrecursion.hoplon.br.call(null);
+    var G__16863 = tailrecursion.hoplon.label.call(null, "Pitch");
+    var G__16864 = tailrecursion.hoplon.br.call(null);
+    var G__16866 = cljs.core.deref.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.current_pitch);
+    var G__16865 = tailrecursion.hoplon.input.call(null, new cljs.core.Keyword(null, "type", "type", 1017479852), "range", new cljs.core.Keyword(null, "id", "id", 1013907597), "pitch-slider", new cljs.core.Keyword(null, "min", "min", 1014012356), 100, new cljs.core.Keyword(null, "max", "max", 1014012118), 440, new cljs.core.Keyword(null, "value", "value", 1125876963), G__16866, new cljs.core.Keyword(null, "on-change", "on-change", 606853840), function(G__16844, G__16845, G__16851, G__16853, G__16852, 
+    G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866) {
       return function() {
         return cljs.core.reset_BANG_.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.current_pitch, parseInt(tailrecursion.hoplon.val_id.call(null, "pitch-slider")));
       };
-    }(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795));
-    var G__13772 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "column half", G__13773, G__13774, G__13780, G__13781, function() {
+    }(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866));
+    var G__16843 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "column half", G__16844, G__16845, G__16851, G__16852, function() {
       var t__8640__auto__ = document.createTextNode("");
-      tailrecursion.javelin.lift.call(null, function(t__8640__auto__, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794) {
-        return function(G__13805, G__13806) {
-          return G__13805.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__13806) + " millis";
+      tailrecursion.javelin.lift.call(null, function(t__8640__auto__, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865) {
+        return function(G__16877, G__16878) {
+          return G__16877.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__16878) + " millis";
         };
-      }(t__8640__auto__, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794)).call(null, t__8640__auto__, tailrecursion.hoplon.app_pages._index_DOT_html.note_length);
+      }(t__8640__auto__, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865)).call(null, t__8640__auto__, tailrecursion.hoplon.app_pages._index_DOT_html.note_length);
       return t__8640__auto__;
-    }(), G__13783, G__13784, G__13785, G__13786, function() {
+    }(), G__16854, G__16855, G__16856, G__16857, function() {
       var t__8640__auto__ = document.createTextNode("");
-      tailrecursion.javelin.lift.call(null, function(t__8640__auto__, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794) {
-        return function(G__13808, G__13807) {
-          return G__13807.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__13808) + " millis";
+      tailrecursion.javelin.lift.call(null, function(t__8640__auto__, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865) {
+        return function(G__16880, G__16879) {
+          return G__16879.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__16880) + " millis";
         };
-      }(t__8640__auto__, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.attack_length, t__8640__auto__);
+      }(t__8640__auto__, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.attack_length, t__8640__auto__);
       return t__8640__auto__;
-    }(), G__13787, G__13788, G__13789, G__13790, function() {
+    }(), G__16858, G__16859, G__16860, G__16861, function() {
       var t__8640__auto__ = document.createTextNode("");
-      tailrecursion.javelin.lift.call(null, function(t__8640__auto__, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794) {
-        return function(G__13810, G__13809) {
-          return G__13809.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__13810) + " millis";
+      tailrecursion.javelin.lift.call(null, function(t__8640__auto__, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865) {
+        return function(G__16882, G__16881) {
+          return G__16881.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__16882) + " millis";
         };
-      }(t__8640__auto__, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.decay_length, t__8640__auto__);
+      }(t__8640__auto__, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.decay_length, t__8640__auto__);
       return t__8640__auto__;
-    }(), G__13791, G__13792, G__13793, G__13794, function() {
+    }(), G__16862, G__16863, G__16864, G__16865, function() {
       var t__8640__auto__ = document.createTextNode("");
-      tailrecursion.javelin.lift.call(null, function(t__8640__auto__, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794) {
-        return function(G__13812, G__13811) {
-          return G__13811.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__13812) + "Hz";
+      tailrecursion.javelin.lift.call(null, function(t__8640__auto__, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865) {
+        return function(G__16884, G__16883) {
+          return G__16883.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__16884) + "Hz";
         };
-      }(t__8640__auto__, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.current_pitch, t__8640__auto__);
+      }(t__8640__auto__, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.current_pitch, t__8640__auto__);
       return t__8640__auto__;
     }());
-    var G__13775 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "column half", tailrecursion.hoplon.loop_tpl_STAR_.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.steps, null, function(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794, G__13772) {
+    var G__16846 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "column half", tailrecursion.hoplon.loop_tpl_STAR_.call(null, tailrecursion.hoplon.app_pages._index_DOT_html.steps, null, function(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865, G__16843) {
       return function(item__8626__auto__) {
-        var vec__13813 = tailrecursion.javelin.cell_map.call(null, cljs.core.identity, tailrecursion.javelin.lift.call(null, function(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794, G__13772) {
-          return function(G__13814) {
-            var step = G__13814;
+        var vec__16885 = tailrecursion.javelin.cell_map.call(null, cljs.core.identity, tailrecursion.javelin.lift.call(null, function(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865, G__16843) {
+          return function(G__16886) {
+            var step = G__16886;
             return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [step], null);
           };
-        }(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794, G__13772)).call(null, item__8626__auto__));
-        var step = cljs.core.nth.call(null, vec__13813, 0, null);
-        return tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "step", new cljs.core.Keyword(null, "do-class", "do-class", 4607961384), tailrecursion.javelin.lift.call(null, function(vec__13813, step, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794, G__13772) {
-          return function(G__13816, G__13815, G__13817) {
-            return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "on", "on", 1013907793), (new cljs.core.Keyword(null, "on?", "on?", 1014014386)).cljs$core$IFn$_invoke$arity$1(G__13815), new cljs.core.Keyword(null, "current", "current", 2140844267), G__13816.call(null, G__13817, (new cljs.core.Keyword(null, "id", "id", 1013907597)).cljs$core$IFn$_invoke$arity$1(G__13815))], null);
+        }(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865, G__16843)).call(null, item__8626__auto__));
+        var step = cljs.core.nth.call(null, vec__16885, 0, null);
+        return tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "step", new cljs.core.Keyword(null, "do-class", "do-class", 4607961384), tailrecursion.javelin.lift.call(null, function(vec__16885, step, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865, G__16843) {
+          return function(G__16888, G__16887, G__16889) {
+            return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "on", "on", 1013907793), (new cljs.core.Keyword(null, "on?", "on?", 1014014386)).cljs$core$IFn$_invoke$arity$1(G__16887), new cljs.core.Keyword(null, "current", "current", 2140844267), G__16888.call(null, G__16889, (new cljs.core.Keyword(null, "id", "id", 1013907597)).cljs$core$IFn$_invoke$arity$1(G__16887))], null);
           };
-        }(vec__13813, step, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794, G__13772)).call(null, cljs.core._EQ_, step, tailrecursion.hoplon.app_pages._index_DOT_html.current_step), new cljs.core.Keyword(null, "on-click", "on-click", 1416542092), function(vec__13813, step, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, 
-        G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794, G__13772) {
+        }(vec__16885, step, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865, G__16843)).call(null, cljs.core._EQ_, step, tailrecursion.hoplon.app_pages._index_DOT_html.current_step), new cljs.core.Keyword(null, "on-click", "on-click", 1416542092), function(vec__16885, step, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, 
+        G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865, G__16843) {
           return function() {
             return tailrecursion.hoplon.app_pages._index_DOT_html.toggle_on.call(null, (new cljs.core.Keyword(null, "id", "id", 1013907597)).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null, step)));
           };
-        }(vec__13813, step, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794, G__13772));
+        }(vec__16885, step, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865, G__16843));
       };
-    }(G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794, G__13772)));
-    var G__13771 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "row clearfix", G__13772, G__13775);
-    var G__13778 = tailrecursion.hoplon.button.call(null, new cljs.core.Keyword(null, "on-click", "on-click", 1416542092), tailrecursion.hoplon.app_pages._index_DOT_html.toggle_playing, function() {
+    }(G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865, G__16843)));
+    var G__16842 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "row clearfix", G__16843, G__16846);
+    var G__16849 = tailrecursion.hoplon.button.call(null, new cljs.core.Keyword(null, "on-click", "on-click", 1416542092), tailrecursion.hoplon.app_pages._index_DOT_html.toggle_playing, function() {
       var t__8640__auto__ = document.createTextNode("");
-      tailrecursion.javelin.lift.call(null, function(t__8640__auto__, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794, G__13772, G__13775, G__13771) {
-        return function(G__13819, G__13818) {
-          return G__13818.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__13819);
+      tailrecursion.javelin.lift.call(null, function(t__8640__auto__, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865, G__16843, G__16846, G__16842) {
+        return function(G__16891, G__16890) {
+          return G__16890.nodeValue = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__16891);
         };
-      }(t__8640__auto__, G__13773, G__13774, G__13780, G__13782, G__13781, G__13783, G__13784, G__13785, G__13786, G__13787, G__13788, G__13789, G__13790, G__13791, G__13792, G__13793, G__13795, G__13794, G__13772, G__13775, G__13771)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.play_button_text, t__8640__auto__);
+      }(t__8640__auto__, G__16844, G__16845, G__16851, G__16853, G__16852, G__16854, G__16855, G__16856, G__16857, G__16858, G__16859, G__16860, G__16861, G__16862, G__16863, G__16864, G__16866, G__16865, G__16843, G__16846, G__16842)).call(null, tailrecursion.hoplon.app_pages._index_DOT_html.play_button_text, t__8640__auto__);
       return t__8640__auto__;
     }());
-    var G__13779 = tailrecursion.hoplon.p.call(null, document.createTextNode("Click the boxes above to toggle the note playing."));
-    var G__13801 = tailrecursion.hoplon.p.call(null, document.createTextNode('If you experience "popping", then adjust your decay time to be longer.'));
-    var G__13777 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "column", G__13778, G__13779, G__13801);
-    var G__13776 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "row clearfix", G__13777);
-    var G__13798 = tailrecursion.hoplon.a.call(null, new cljs.core.Keyword(null, "href", "href", 1017115293), "http://hoplon.io", "Hoplon");
-    var G__13797 = tailrecursion.hoplon.p.call(null, document.createTextNode("Made with love in "), G__13798, document.createTextNode("."));
-    var G__13800 = tailrecursion.hoplon.a.call(null, new cljs.core.Keyword(null, "href", "href", 1017115293), "http://blog.mattgauger.com", "my blog");
-    var G__13799 = tailrecursion.hoplon.p.call(null, document.createTextNode("If you found this interesting, check out "), G__13800, document.createTextNode("."));
-    var G__13796 = tailrecursion.hoplon.footer.call(null, G__13797, G__13799);
-    var G__13770 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "container", G__13771, G__13776, G__13796);
-    return G__13770;
+    var G__16850 = tailrecursion.hoplon.p.call(null, document.createTextNode("Click the boxes above to toggle the note playing."));
+    var G__16873 = tailrecursion.hoplon.p.call(null, document.createTextNode('If you experience "popping", then adjust your decay time to be longer.'));
+    var G__16848 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "column", G__16849, G__16850, G__16873);
+    var G__16847 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "row clearfix", G__16848);
+    var G__16869 = tailrecursion.hoplon.a.call(null, new cljs.core.Keyword(null, "href", "href", 1017115293), "http://hoplon.io", "Hoplon");
+    var G__16870 = tailrecursion.hoplon.a.call(null, new cljs.core.Keyword(null, "href", "href", 1017115293), "http://blog.mattgauger.com", "Matt Gauger");
+    var G__16868 = tailrecursion.hoplon.p.call(null, document.createTextNode("Made with love in "), G__16869, document.createTextNode(" by "), G__16870, document.createTextNode("."));
+    var G__16872 = tailrecursion.hoplon.a.call(null, new cljs.core.Keyword(null, "href", "href", 1017115293), "http://blog.mattgauger.com", "my blog");
+    var G__16871 = tailrecursion.hoplon.p.call(null, document.createTextNode("If you found this interesting, check out "), G__16872, document.createTextNode("."));
+    var G__16867 = tailrecursion.hoplon.footer.call(null, G__16868, G__16871);
+    var G__16841 = tailrecursion.hoplon.div.call(null, new cljs.core.Keyword(null, "class", "class", 1108647146), "container", G__16842, G__16847, G__16867);
+    return G__16841;
   }(), function() {
-    var G__13820 = tailrecursion.hoplon.app_pages._index_DOT_html.goog_analytics.call(null, "UA-25564656-1");
-    return G__13820;
+    var G__16892 = tailrecursion.hoplon.app_pages._index_DOT_html.goog_analytics.call(null, "UA-25564656-1");
+    return G__16892;
   }()));
   return tailrecursion.hoplon.init.call(null);
 };
