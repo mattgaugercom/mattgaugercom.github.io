@@ -133,6 +133,7 @@
                      :on-change #(reset! current-pitch (js/parseInt (val-id "pitch-slider"))))
               (text "~{current-pitch}Hz"))
          (div :class "column half"
+              (p (text "Click the boxes below to toggle the note playing."))
               (loop-tpl :bindings [step steps]
                         (div :class "step"
                              :do-class (cell= {:on (:on? step)
@@ -141,7 +142,6 @@
     (div :class "row clearfix"
          (div :class "column"
               (button :on-click toggle-playing (text "~{play-button-text}"))
-              (p (text "Click the boxes above to toggle the note playing."))
               (p (text "If you experience \"popping\", then adjust your decay time to be longer."))))
     (footer (p (text "Made with love in ")
                (a :href "http://hoplon.io" "Hoplon")
