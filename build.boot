@@ -1,41 +1,24 @@
-#!/usr/bin/env boot
-
 (set-env!
- :project 'mattgaugerdotcom
- :dependencies '[[adzerk/boot-cljs          "1.7.48-4"]
-                 [adzerk/boot-cljs-repl     "0.1.9"]
-                 [adzerk/boot-reload        "0.3.2"]
-                 [hoplon/boot-hoplon        "0.1.10"]
-                 [hoplon/hoplon             "6.0.0-alpha10"]
-                 [org.clojure/clojure       "1.7.0"]
-                 [org.clojure/clojurescript "1.7.122"]
-                 [tailrecursion/boot-jetty  "0.1.0"]
-                 [hum                       "0.3.0"]]
-  :source-paths   #{"src"}
+ :dependencies '[[perun "0.3.0" :scope "test"]
+                 [hiccup "1.0.5"]
+                 [pandeiro/boot-http "0.7.0"]]
+  :source-paths   #{"src" "content"}
   :resource-paths #{"assets"})
 
 (require
-  '[adzerk.boot-cljs         :refer [cljs]]
-  '[adzerk.boot-cljs-repl    :refer [cljs-repl start-repl]]
-  '[adzerk.boot-reload       :refer [reload]]
-  '[hoplon.boot-hoplon       :refer [hoplon prerender]]
-  '[tailrecursion.boot-jetty :refer [serve]])
+ '[io.perun :refer :all]
+ '[pandeiro.boot-http :refer [serve]])
+
+(deftask build
+  []
+  (comp
+   (watch)
+   (base)
+   (markdown)
+   (render :renderer 'site.core/page)))
 
 (deftask dev
-  "Build application for local development."
   []
   (comp
-    (watch)
-    (hoplon)
-    (reload)
-    (cljs-repl)
-    (cljs)
-    (serve :port 8000)))
-
-(deftask prod
-  "Build application for production deployment."
-  []
-  (comp
-    (hoplon)
-    (cljs :optimizations :advanced)
-    (prerender)))
+   (build)
+   (serve :resource-root "public")))
