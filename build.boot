@@ -1,17 +1,26 @@
 (set-env!
  :dependencies '[[perun "0.3.0" :scope "test"]
                  [hiccup "1.0.5"]
-                 [pandeiro/boot-http "0.7.0"]]
+                 [pandeiro/boot-http "0.7.0"]
+                 [deraen/boot-sass "0.2.1"]]
   :source-paths   #{"src" "content"}
   :resource-paths #{"resources"})
 
 (require
  '[io.perun :refer :all]
- '[pandeiro.boot-http :refer [serve]])
+ '[pandeiro.boot-http :refer [serve]]
+ '[deraen.boot-sass :refer [sass]])
+
+(deftask sass-with-config
+  []
+  (comp
+   (sass)
+   (sift :move {#"scss/index.css" "public/index.css"})))
 
 (deftask build
   []
   (comp
+   (sass-with-config)
    (global-metadata :filename "mattgauger.base.edn")
    (base)
    (markdown)
@@ -23,10 +32,12 @@
   (comp
    (watch)
    (build)
-   (serve :resource-root "public")))
+   (serve :resource-root "public")
+   (target)))
 
 (deftask build-prod
   []
   (comp
    (build)
-   (inject-scripts :scripts #{"ga.js"})))
+   ;; some github pages step here
+   ))

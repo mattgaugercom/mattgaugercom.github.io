@@ -3,7 +3,9 @@
 
 (defn page [data]
   (hp/html5
-   [:head (hp/include-css "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.css")]
+   [:head
+    (hp/include-css "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.css")
+    (hp/include-css "/index.css")]
    [:body
     [:nav {:class "nav container"}
       [:div {:class "nav-left"}
