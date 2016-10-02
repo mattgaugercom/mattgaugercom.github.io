@@ -2,9 +2,9 @@
  :dependencies '[[perun "0.3.0" :scope "test"]
                  [hiccup "1.0.5"]
                  [pandeiro/boot-http "0.7.0"]
-                 [deraen/boot-sass "0.2.1"]]
-  :source-paths   #{"src" "content"}
-  :resource-paths #{"resources"})
+                 [deraen/boot-sass "0.3.0-SNAPSHOT"]]
+ :source-paths   #{"src" "content"}
+ :resource-paths #{"resources"})
 
 (require
  '[io.perun :refer :all]
@@ -15,7 +15,7 @@
   []
   (comp
    (sass)
-   (sift :move {#"scss/index.css" "public/index.css"})))
+   (sift :move {#"scss/index.css" "public/css/index.css"})))
 
 (deftask build
   []
