@@ -5,8 +5,7 @@
   (hp/html5
    [:head (hp/include-css "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.css")]
    [:body
-    [:div {:class "container"}
-     [:nav {:class "nav"}
+    [:nav {:class "nav container"}
       [:div {:class "nav-left"}
        [:a {:href "http://mattgauger.com" :class "nav-item is-brand"}
         [:h1 "&#955; mattgauger.com"]]]
@@ -18,6 +17,7 @@
       [:div {:class "nav-right nav-menu"}
        [:a {:href "http://blog.mattgauger.com" :class "nav-item"} "Blog"]
        [:a {:href "mailto:contact@mattgauger.com" :class "nav-item"} "Contact"]]]
+    [:div {:class "container"}
      [:div {:class "content is-medium"}
       (-> data :entry :content)]]
     [:footer {:class "footer"}
