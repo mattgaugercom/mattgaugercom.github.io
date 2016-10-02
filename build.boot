@@ -3,7 +3,7 @@
                  [hiccup "1.0.5"]
                  [pandeiro/boot-http "0.7.0"]]
   :source-paths   #{"src" "content"}
-  :resource-paths #{"assets"})
+  :resource-paths #{"resources"})
 
 (require
  '[io.perun :refer :all]
@@ -12,13 +12,21 @@
 (deftask build
   []
   (comp
-   (watch)
+   (global-metadata :filename "mattgauger.base.edn")
    (base)
    (markdown)
-   (render :renderer 'site.core/page)))
+   (render :renderer 'site.core/page)
+   (inject-scripts :scripts #{"ga.js"})))
 
-(deftask dev
+(deftask build-dev
+  []
+  (comp
+   (watch)
+   (build)
+   (serve :resource-root "public")))
+
+(deftask build-prod
   []
   (comp
    (build)
-   (serve :resource-root "public")))
+   (inject-scripts :scripts #{"ga.js"})))
