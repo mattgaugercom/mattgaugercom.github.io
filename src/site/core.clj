@@ -10,10 +10,8 @@
        [:a {:href "http://mattgauger.com" :class "nav-item is-brand"}
         [:h1 "&#955; mattgauger.com"]]]
       [:div {:class "nav-center"}]
-      [:div {:class "nav-toggle"}
-       [:span]
-       [:span]
-       [:span]]
+     [:div {:class "nav-toggle"}
+      (repeat 3 [:span])]
       [:div {:class "nav-right nav-menu"}
        [:a {:href "http://blog.mattgauger.com" :class "nav-item"} "Blog"]
        [:a {:href "mailto:contact@mattgauger.com" :class "nav-item"} "Contact"]]]
