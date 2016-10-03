@@ -4,11 +4,11 @@ My personal site.
 
 ## How?
 
-[Hoplon](http://hoplon.io)!
+[Perun](http://perun.io), Clojure, [Boot](http://boot-clj.com), Sass. Other stuff.
 
 ## License
 
-&copy; Matt Gauger 2013-2014. All rights reserved.
+&copy; Matt Gauger 2013-2016. All rights reserved.
 
 ## Who did this?
 

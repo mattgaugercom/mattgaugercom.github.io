@@ -12,10 +12,13 @@
       " &copy; 2016"]
      [:p
       "Made with "
+      [:a {:href "http://clojure.org/"} "Clojure"]
+      ", "
       [:a {:href "http://perun.io"} "perun"]
-      " and "
-      [:a {:href "http://boot-clj.com"} "boot"]
-      "."]]]])
+      ", and "
+      [:a {:href "http://boot-clj.com"} "Boot"]
+      ". "
+      [:a {:href "https://github.com/mattgaugercom/mattgaugercom.github.io"} "Repo"]]]]])
 
 (defn page [data]
   (hp/html5
