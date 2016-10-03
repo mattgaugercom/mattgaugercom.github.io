@@ -3,7 +3,9 @@
                  [hiccup "1.0.5"]
                  [pandeiro/boot-http "0.7.0"]
                  [deraen/boot-livereload "0.1.2"]
-                 [deraen/boot-sass "0.3.0-SNAPSHOT"]]
+                 [deraen/boot-sass "0.3.0-SNAPSHOT"]
+                 ;; Front-end dependencies:
+                 [org.webjars.bower/ginger-grid "1.1.4"]]
  :source-paths   #{"src" "content"}
  :resource-paths #{"resources"})
 
@@ -27,7 +29,7 @@
    (base)
    (markdown)
    (render :renderer 'site.core/page)
-   (inject-scripts :scripts #{"ga.js"})))
+   (inject-scripts :scripts #{"ga.js" "header.js"})))
 
 (deftask build-dev
   []
