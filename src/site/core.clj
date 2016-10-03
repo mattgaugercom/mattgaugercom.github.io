@@ -29,18 +29,17 @@
     (hp/include-css "/css/index.css")
     (hp/include-js "https://unpkg.com/headroom.js")]
    [:body
-    [:header {:class ""}
-     [:nav {:class "nav container"}
-      [:div {:class "nav-left"}
-       [:a {:href "http://mattgauger.com" :class "nav-item is-brand"}
+    [:header {:class "container"}
+     [:nav {:class "row"}
+      [:div {:class "nav-brand"}
+       [:a {:href "http://mattgauger.com" :class "is-brand"}
         [:h1 "&#955; mattgauger.com"]]]
-      [:div {:class "nav-center"}]
-      [:div {:class "nav-toggle"}
+      [:div {:class ""}
        (repeat 3 [:span])]
-      [:div {:class "nav-right nav-menu"}
-       [:a {:href "http://blog.mattgauger.com" :class "nav-item"} "Blog"]
-       [:a {:href "mailto:contact@mattgauger.com" :class "nav-item"} "Contact"]]]]
+      [:div {:class "nav-menu"}
+       [:a {:href "http://blog.mattgauger.com" :class ""} "Blog"]
+       [:a {:href "mailto:contact@mattgauger.com" :class ""} "Contact"]]]]
     [:div {:class "container"}
-     [:div {:class "content is-medium"}
+     [:div {:class "row"}
       (-> data :entry :content)]]
     footer]))

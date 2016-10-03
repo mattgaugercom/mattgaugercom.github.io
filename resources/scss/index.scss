@@ -3,5 +3,6 @@
 @import "ginger-grid/settings.scss";
 @import "ginger-grid/ginger.scss";
 
-@import "header.scss"
-
+@import "base/colors.scss";
+@import "base/typography.scss";
+@import "components/header.scss";
