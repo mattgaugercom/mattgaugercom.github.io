@@ -2,6 +2,7 @@
  :dependencies '[[perun "0.3.0" :scope "test"]
                  [hiccup "1.0.5"]
                  [pandeiro/boot-http "0.7.0"]
+                 [deraen/boot-livereload "0.1.2"]
                  [deraen/boot-sass "0.3.0-SNAPSHOT"]]
  :source-paths   #{"src" "content"}
  :resource-paths #{"resources"})
@@ -9,7 +10,8 @@
 (require
  '[io.perun :refer :all]
  '[pandeiro.boot-http :refer [serve]]
- '[deraen.boot-sass :refer [sass]])
+ '[deraen.boot-sass :refer [sass]]
+ '[deraen.boot-livereload :refer [livereload]])
 
 (deftask sass-with-config
   []
@@ -33,7 +35,8 @@
    (watch)
    (build)
    (serve :resource-root "public")
-   (target)))
+   (target)
+   (livereload)))
 
 (deftask build-prod
   []

@@ -11,7 +11,6 @@
   </div>
 </section>
 
-
 A software developer at [Heroku](https://www.heroku.com).
 
 My interests include functional programming, intelligent agents, and ubiquitous + wearable computing. On the practical side, I prefer to use Clojure & ClojureScript. I've spent a lot of time working with Ruby, JavaScript, and the standard assortment of developer tools: vim, emacs, git, and the rest.
