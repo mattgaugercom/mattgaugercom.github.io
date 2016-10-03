@@ -1,6 +1,18 @@
 (ns site.core
   (:require [hiccup.page :as hp]))
 
+(def header
+  [:header {:class "container"}
+   [:nav {:class "row"}
+    [:div {:class "nav-brand"}
+     [:a {:href "http://mattgauger.com" :class "is-brand"}
+      [:h1 "&#955; mattgauger.com"]]]
+    [:div {:class ""}
+     (repeat 3 [:span])]
+    [:div {:class "nav-menu"}
+     [:a {:href "http://blog.mattgauger.com" :class ""} "Blog"]
+     [:a {:href "mailto:contact@mattgauger.com" :class ""} "Contact"]]]])
+
 (def footer
   [:footer {:class "footer"}
    [:div {:class "container"}
@@ -32,16 +44,7 @@
     (hp/include-css "/css/index.css")
     (hp/include-js "https://unpkg.com/headroom.js")]
    [:body
-    [:header {:class "container"}
-     [:nav {:class "row"}
-      [:div {:class "nav-brand"}
-       [:a {:href "http://mattgauger.com" :class "is-brand"}
-        [:h1 "&#955; mattgauger.com"]]]
-      [:div {:class ""}
-       (repeat 3 [:span])]
-      [:div {:class "nav-menu"}
-       [:a {:href "http://blog.mattgauger.com" :class ""} "Blog"]
-       [:a {:href "mailto:contact@mattgauger.com" :class ""} "Contact"]]]]
+    header
     [:div {:class "container"}
      [:div {:class "row"}
       (-> data :entry :content)]]
