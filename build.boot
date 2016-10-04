@@ -21,6 +21,9 @@
    (sass)
    (sift :move {#"scss/index.css" "public/css/index.css"})))
 
+(deftask js-libraries []
+  (sift :move {#"js/polyfill" "public/js/polyfill"}))
+
 (deftask build
   []
   (comp
@@ -29,7 +32,8 @@
    (base)
    (markdown)
    (render :renderer 'site.core/page)
-   (inject-scripts :scripts #{"ga.js" "header.js"})))
+   (js-libraries)
+   (inject-scripts :scripts #{"js/ga.js" "js/header.js"})))
 
 (deftask build-dev
   []

@@ -1,22 +1,23 @@
 (ns site.core
-  (:require [hiccup.page :as hp]))
+  (:require [hiccup.page :as hp]
+            [hiccup.util :as util]))
 
 (def header
   [:header {:class "container"}
    [:nav {:class "row"}
-    [:div {:class "nav-brand"}
+    [:div {:class "col-6 nav-brand"}
      [:a {:href "http://mattgauger.com" :class "is-brand"}
       [:h1 "&#955; mattgauger.com"]]]
-    [:div {:class ""}
+    [:div {:class "hamburger"}
      (repeat 3 [:span])]
-    [:div {:class "nav-menu"}
+    [:div {:class "col-6 nav-menu"}
      [:a {:href "http://blog.mattgauger.com" :class ""} "Blog"]
      [:a {:href "mailto:contact@mattgauger.com" :class ""} "Contact"]]]])
 
 (def footer
-  [:footer {:class "footer"}
-   [:div {:class "container"}
-    [:div {:class "content has-text-centered"}
+  [:footer {:class "footer container"}
+   [:div {:class "row"}
+    [:div {:class "col-12 has-text-centered"}
      [:p
       [:strong "mattgauger.com"]
       " by "
@@ -30,7 +31,8 @@
       ", and "
       [:a {:href "http://boot-clj.com"} "Boot"]
       ". "
-      [:a {:href "https://github.com/mattgaugercom/mattgaugercom.github.io"} "Repo"]]]]])
+      [:a {:href "https://github.com/mattgaugercom/mattgaugercom.github.io"} "Repo on Github"]
+      "."]]]])
 
 (defn page [data]
   (hp/html5
@@ -47,5 +49,16 @@
     header
     [:div {:class "container"}
      [:div {:class "row"}
+      [:div {:class "col-12"}]
       (-> data :entry :content)]]
-    footer]))
+    footer
+    (util/as-str "
+<!--[if lt IE 9]>
+  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>
+  <script>console.log(window.jQuery)</script>
+  <script src=\"js/polyfill/ie-love.js\"></script>
+<![endif]-->
+<!--[if gt IE 8]><!-->
+  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js\"></script>
+  <script>console.log(window.jQuery)</script>
+<!--<![endif]-->")]))
