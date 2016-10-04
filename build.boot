@@ -33,7 +33,7 @@
    (markdown)
    (render :renderer 'site.core/page)
    (js-libraries)
-   (inject-scripts :scripts #{"js/ga.js" "js/header.js"})))
+   (inject-scripts :scripts #{"ga.js" "header.js"})))
 
 (deftask build-dev
   []

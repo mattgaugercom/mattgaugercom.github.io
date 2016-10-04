@@ -42,7 +42,7 @@
     [:meta {:http-equiv"x-ua-compatible" :content "ie=edge"}]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1, shrink-to-fit=no"}]
     [:title "mattgauger.com"]
-    (hp/include-css "https://unpkg.com/reeeset@0.0.7")
+    (hp/include-css "https://unpkg.com/reeeset@0.0.7.css")
     (hp/include-css "/css/index.css")
     (hp/include-js "https://unpkg.com/headroom.js")]
    [:body
