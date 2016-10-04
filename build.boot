@@ -5,7 +5,8 @@
                  [deraen/boot-livereload "0.1.2"]
                  [deraen/boot-sass "0.3.0-SNAPSHOT"]
                  ;; Front-end dependencies:
-                 [org.webjars.bower/ginger-grid "1.1.4"]]
+                 [org.webjars.bower/ginger-grid "1.1.4"]
+                 [org.webjars.bower/github-com-corysimmons-typographic "2.9.3"]]
  :source-paths   #{"src" "content"}
  :resource-paths #{"resources"})
 

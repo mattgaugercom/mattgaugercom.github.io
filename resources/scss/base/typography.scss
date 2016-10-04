@@ -1,0 +1,18 @@
+// typographic mixins
+@import "github-com-corysimmons-typographic/scss/typographic.scss";
+
+$line-height-ratio:   1.75;
+$heading-ratio:       $golden;
+$body-font:           $lucida-bright;
+$body-font-weight:    300;
+$body-color:          #666;
+$heading-font:        $helvetica;
+$heading-font-weight: 500;
+$heading-color:       #111;
+$min-font:            16px;
+$max-font:            20px;
+$min-width:           600px;
+$max-width:           1000px;
+$vertical-rhythm:     true;
+
+@include typographic();
