@@ -25,6 +25,9 @@
 (deftask js-libraries []
   (sift :move {#"js/polyfill" "public/js/polyfill"}))
 
+(deftask favicon []
+  (sift :move {#"favicon.ico" "public/favicon.ico"}))
+
 (deftask build
   []
   (comp
@@ -34,6 +37,7 @@
    (markdown)
    (render :renderer 'site.core/page)
    (js-libraries)
+   (favicon)
    (inject-scripts :scripts #{"ga.js" "header.js"})))
 
 (deftask build-dev
